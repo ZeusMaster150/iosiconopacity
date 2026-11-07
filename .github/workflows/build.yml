@@ -10,10 +10,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Unpack project
+        run: unzip -o project.zip
+
       - name: Install tools
         run: |
           brew install ldid make dpkg
           git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          git clone --depth=1 https://github.com/theos/sdks.git $HOME/theos/sdks
 
       - name: Build
         run: |
