@@ -37,11 +37,12 @@ jobs:
           name: IconOpacity-deb
           path: packages/*.deb
 
-      - name: Update Sileo repo
+      - name: Update repo and project page
         run: |
           python3 make_repo.py packages docs
+          rm -f project.zip
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add docs
-          git commit -m "Update repo" || echo "Nothing to commit"
+          git add -A
+          git commit -m "Update tweak, repo and project page" || echo "Nothing to commit"
           git push
