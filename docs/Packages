@@ -1,0 +1,15 @@
+Package: com.example.iconopacity
+Name: IconOpacity
+Depends: mobilesubstrate, preferenceloader
+Description: Makes home screen icons slightly transparent, with a settings page
+Maintainer: me
+Author: me
+Section: Tweaks
+Architecture: iphoneos-arm
+Version: 0.0.3-1
+Installed-Size: 124
+Filename: debs/com.example.iconopacity_0.0.3-1_iphoneos-arm.deb
+Size: 6942
+MD5sum: bcd8bacd207d0ee81f2f7fe77ccf0ccf
+SHA1: 154152d2515b6b8288db4bffde0ed4da45770c2a
+SHA256: d30b4785d8ef2830e790e54bb2fee30767e4c2e5451c9abe781868dd95fc0b7b
