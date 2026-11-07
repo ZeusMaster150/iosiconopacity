@@ -3,6 +3,9 @@ name: Build IconOpacity
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: macos-latest
@@ -17,7 +20,10 @@ jobs:
         run: |
           brew install ldid make dpkg
           git clone --recursive https://github.com/theos/theos.git $HOME/theos
-          git clone --depth=1 https://github.com/theos/sdks.git $HOME/theos/sdks
+          git clone --depth=1 https://github.com/theos/sdks.git /tmp/sdks
+          mkdir -p $HOME/theos/sdks
+          cp -R /tmp/sdks/*.sdk $HOME/theos/sdks/
+          ls $HOME/theos/sdks
 
       - name: Build
         run: |
@@ -30,3 +36,12 @@ jobs:
         with:
           name: IconOpacity-deb
           path: packages/*.deb
+
+      - name: Update Sileo repo
+        run: |
+          python3 make_repo.py packages docs
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add docs
+          git commit -m "Update repo" || echo "Nothing to commit"
+          git push
