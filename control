@@ -1,0 +1,9 @@
+Package: com.example.iconopacity
+Name: IconOpacity
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Makes home screen icons slightly transparent
+Maintainer: me
+Author: me
+Section: Tweaks
