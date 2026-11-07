@@ -1,9 +1,13 @@
 Package: com.example.iconopacity
-Name: IconOpacity
-Depends: mobilesubstrate
-Version: 0.0.1
+Name: Icon Opacity
+Depends: mobilesubstrate, preferenceloader
+Version: 0.1.0
 Architecture: iphoneos-arm
-Description: Makes home screen icons slightly transparent
-Maintainer: me
-Author: me
+Description: Translucent icons and labels plus a colour overlay, with live preview
+Maintainer: ZeusMaster150
+Author: ZeusMaster150
 Section: Tweaks
+Homepage: https://zeusmaster150.github.io/iosiconopacity/
+Depiction: https://zeusmaster150.github.io/iosiconopacity/
+SileoDepiction: https://zeusmaster150.github.io/iosiconopacity/depictions/com.example.iconopacity.json
+Icon: https://zeusmaster150.github.io/iosiconopacity/assets/icon.png

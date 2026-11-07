@@ -1,0 +1,9 @@
+{
+	entry = {
+		bundle = IconOpacityPrefs;
+		cell = PSLinkCell;
+		detail = IOPRootListController;
+		isController = 1;
+		label = "Icon Opacity";
+	};
+}

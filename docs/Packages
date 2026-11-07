@@ -13,3 +13,23 @@ Size: 6942
 MD5sum: bcd8bacd207d0ee81f2f7fe77ccf0ccf
 SHA1: 154152d2515b6b8288db4bffde0ed4da45770c2a
 SHA256: d30b4785d8ef2830e790e54bb2fee30767e4c2e5451c9abe781868dd95fc0b7b
+
+Package: com.example.iconopacity
+Name: Icon Opacity
+Depends: mobilesubstrate, preferenceloader
+Description: Translucent icons and labels plus a colour overlay, with live preview
+Maintainer: ZeusMaster150
+Author: ZeusMaster150
+Section: Tweaks
+Homepage: https://zeusmaster150.github.io/iosiconopacity/
+Depiction: https://zeusmaster150.github.io/iosiconopacity/
+SileoDepiction: https://zeusmaster150.github.io/iosiconopacity/depictions/com.example.iconopacity.json
+Icon: https://zeusmaster150.github.io/iosiconopacity/assets/icon.png
+Architecture: iphoneos-arm
+Version: 0.1.0-1
+Installed-Size: 128
+Filename: debs/com.example.iconopacity_0.1.0-1_iphoneos-arm.deb
+Size: 10298
+MD5sum: 6ef6e4e93d6347b6485e94e27bf11e6b
+SHA1: 5f1c0c7d6507070465a47bd1bea637b7e2d42537
+SHA256: c36c73b538683c54bc66c842aa9845b82191c6fc47c4736e80ec5a47241b4a57
