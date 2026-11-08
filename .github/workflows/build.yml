@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - name: Checkout
+      - name: Checkout tweak repo
         uses: actions/checkout@v4
 
       - name: Unpack project
@@ -37,12 +37,33 @@ jobs:
           name: IconOpacity-deb
           path: packages/*.deb
 
-      - name: Update repo and project page
+      - name: Checkout Sileo repo
+        uses: actions/checkout@v4
+        with:
+          repository: ZeusMaster150/ZeusMaster150.github.io
+          token: ${{ secrets.PAGES_REPO_TOKEN }}
+          path: pages
+
+      - name: Publish to Sileo repo
         run: |
-          python3 make_repo.py packages docs
+          mkdir -p pages/assets/iconopacity pages/depictions
+          cp -R site/assets/iconopacity/. pages/assets/iconopacity/
+          cp site/depictions/*.json pages/depictions/
+          [ -f pages/index.html ] || cp site/index.html pages/index.html
+          [ -f pages/CydiaIcon.png ] || cp site/CydiaIcon.png pages/CydiaIcon.png
+          python3 make_repo.py packages pages
+          cd pages
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Publish Icon Opacity" || echo "Nothing to commit"
+          git push
+
+      - name: Save sources in tweak repo
+        run: |
           rm -f project.zip
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add -A
-          git commit -m "Update tweak, repo and project page" || echo "Nothing to commit"
+          git commit -m "Update tweak sources" || echo "Nothing to commit"
           git push
