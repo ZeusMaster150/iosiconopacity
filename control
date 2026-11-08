@@ -1,7 +1,7 @@
 Package: com.example.iconopacity
 Name: Icon Opacity
 Depends: mobilesubstrate, preferenceloader
-Version: 0.1.0
+Version: 0.1.1
 Architecture: iphoneos-arm
 Description: Translucent icons and labels plus a colour overlay, with live preview
 Maintainer: ZeusMaster150

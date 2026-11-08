@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <dlfcn.h>
 #import <Preferences/PSTableCell.h>
 #import <Preferences/PSSpecifier.h>
 #import "IOPRootListController.h"
@@ -25,6 +26,39 @@ static BOOL IOPBool(NSString *key, BOOL def) {
     return [v respondsToSelector:@selector(boolValue)] ? [v boolValue] : def;
 }
 
+
+// Пытаемся достать обои рабочего стола: сначала готовые миниатюры,
+// потом файл .cpbitmap (через системную функцию AppSupport).
+typedef CFArrayRef (*IOPCPBitmapFunc)(CFDataRef, void *, int, void *);
+
+static UIImage *IOPWallpaperImage(void) {
+    NSString *dir = @"/var/mobile/Library/SpringBoard";
+
+    for (NSString *name in @[@"HomeBackgroundThumbnail.jpg", @"LockBackgroundThumbnail.jpg"]) {
+        UIImage *img = [UIImage imageWithContentsOfFile:[dir stringByAppendingPathComponent:name]];
+        if (img) return img;
+    }
+
+    void *handle = dlopen("/System/Library/PrivateFrameworks/AppSupport.framework/AppSupport", RTLD_LAZY);
+    IOPCPBitmapFunc fn = handle ? (IOPCPBitmapFunc)dlsym(handle, "CPBitmapCreateImagesFromData") : NULL;
+    if (!fn) return nil;
+
+    for (NSString *name in @[@"HomeBackground.cpbitmap", @"LockBackground.cpbitmap"]) {
+        NSData *data = [NSData dataWithContentsOfFile:[dir stringByAppendingPathComponent:name]];
+        if (!data) continue;
+        CFArrayRef images = fn((__bridge CFDataRef)data, NULL, 1, NULL);
+        if (!images) continue;
+        UIImage *result = nil;
+        if (CFArrayGetCount(images) > 0) {
+            CGImageRef cg = (CGImageRef)CFArrayGetValueAtIndex(images, 0);
+            result = [UIImage imageWithCGImage:cg];
+        }
+        CFRelease(images);
+        if (result) return result;
+    }
+    return nil;
+}
+
 // Ячейка-предпросмотр: иконка Safari на цветном фоне, подпись и цветной слой
 @interface IOPPreviewCell : PSTableCell
 @end
@@ -32,6 +66,7 @@ static BOOL IOPBool(NSString *key, BOOL def) {
 @implementation IOPPreviewCell {
     UIView *_stage;
     CAGradientLayer *_gradient;
+    UIImageView *_wallpaperView;
     UIImageView *_iconView;
     UIView *_tintView;
     UILabel *_label;
@@ -57,6 +92,17 @@ static BOOL IOPBool(NSString *key, BOOL def) {
         _gradient.startPoint = CGPointMake(0.0, 0.0);
         _gradient.endPoint = CGPointMake(1.0, 1.0);
         [_stage.layer addSublayer:_gradient];
+
+        // Настоящие обои рабочего стола (если получилось их прочитать)
+        _wallpaperView = [[UIImageView alloc] init];
+        _wallpaperView.contentMode = UIViewContentModeScaleAspectFill;
+        _wallpaperView.clipsToBounds = YES;
+        UIImage *wallpaper = IOPWallpaperImage();
+        if (wallpaper) {
+            _wallpaperView.image = wallpaper;
+        }
+        _wallpaperView.hidden = (wallpaper == nil);
+        [_stage addSubview:_wallpaperView];
 
         _iconView = [[UIImageView alloc] init];
         _iconView.contentMode = UIViewContentModeScaleAspectFit;
@@ -111,6 +157,7 @@ static BOOL IOPBool(NSString *key, BOOL def) {
     CGRect bounds = self.contentView.bounds;
     _stage.frame = CGRectInset(bounds, 16.0, 8.0);
     _gradient.frame = _stage.bounds;
+    _wallpaperView.frame = _stage.bounds;
 
     CGFloat size = 60.0;
     CGFloat contentHeight = size + 6.0 + 16.0;

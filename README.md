@@ -22,8 +22,8 @@
 </p>
 
 <p align="center">
-  <img src="site/assets/iconopacity/preview.png" alt="Illustration of the effect">
-  <br><sub>Illustration of the effect, not a device screenshot.</sub>
+  <img src="site/assets/iconopacity/preview.png" alt="Home screen: stock vs Icon Opacity">
+  <br><sub>Real screenshots: stock (left) and with Icon Opacity (right). iPhone 6, iOS 12.5.8.</sub>
 </p>
 
 ## Features
@@ -31,7 +31,7 @@
 - **Icon opacity**: a slider from 0.1 to 1.0 for every home screen icon.
 - **Label opacity**: separate slider for the text under the icons.
 - **Colour overlay**: pick red, green and blue plus the overlay opacity, to match the icons to any wallpaper or theme.
-- **Live preview** in Settings: a Safari icon on a colourful background shows the result while you drag the sliders.
+- **Live preview** in Settings: a Safari icon over your current wallpaper shows the result while you drag the sliders.
 - **Instant apply**: changes show on the home screen without a respring.
 - Own page in **Settings → Icon Opacity**.
 
@@ -85,7 +85,7 @@ make package
 
 - Прозрачность иконок и отдельно подписей.
 - Цветной слой: красный, зелёный, синий и его прозрачность.
-- Предпросмотр на иконке Safari прямо в настройках.
+- Предпросмотр на иконке Safari поверх твоих обоев прямо в настройках.
 - Всё применяется сразу, без ресинга.
 
 **Установка:** Sileo → Источники → «+» → `https://zeusmaster150.github.io/` → найти Icon Opacity. Нужен PreferenceLoader.

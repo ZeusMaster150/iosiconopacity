@@ -3,6 +3,7 @@
 		bundle = IconOpacityPrefs;
 		cell = PSLinkCell;
 		detail = IOPRootListController;
+		icon = icon.png;
 		isController = 1;
 		label = "Icon Opacity";
 	};

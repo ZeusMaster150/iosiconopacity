@@ -9,26 +9,30 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "## Icon Opacity\n\nMake home screen **icons** and **labels** translucent and add a **colour overlay**, so your wallpaper shows through.\n\n- Icon opacity slider\n- Separate label opacity slider\n- Colour overlay with its own opacity\n- Live preview in Settings\n- Changes apply instantly, no respring"
+          "markdown": "## Icon Opacity\n\nMake home screen **icons** and **labels** translucent and add a **colour overlay**, so your wallpaper shows through.\n\n- Icon opacity slider\n- Separate label opacity slider\n- Colour overlay with its own opacity\n- Live preview over your wallpaper in Settings\n- Changes apply instantly, no respring"
         },
-        { "class": "DepictionSeparatorView" },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionImageView",
           "URL": "https://zeusmaster150.github.io/assets/iconopacity/preview.png",
-          "width": 600,
-          "height": 295,
+          "width": 1608,
+          "height": 486,
           "cornerRadius": 12,
           "alignment": 1
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "*Illustration of the effect, not a device screenshot.*"
+          "markdown": "*Real screenshots: stock (left) and with Icon Opacity (right).*"
         },
-        { "class": "DepictionSeparatorView" },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.1.0"
+          "text": "0.1.1"
         },
         {
           "class": "DepictionTableTextView",
@@ -40,7 +44,10 @@
           "title": "Requires",
           "text": "iOS 12, PreferenceLoader"
         },
-        { "class": "DepictionSpacerView", "spacing": 12 }
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 12
+        }
       ]
     },
     {
@@ -49,7 +56,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "### 0.1.0\n- Live preview in the settings page\n- Label opacity\n- Repo page and Sileo depiction\n\n### 0.0.x\n- Icon opacity\n- Colour overlay\n- Settings page"
+          "markdown": "### 0.1.1\n- Preview shows your current wallpaper\n- Icon next to the Settings entry\n- Real screenshots\n\n### 0.1.0\n- Live preview in the settings page\n- Label opacity\n- Repo page and Sileo depiction\n\n### 0.0.x\n- Icon opacity\n- Colour overlay\n- Settings page"
         }
       ]
     }
