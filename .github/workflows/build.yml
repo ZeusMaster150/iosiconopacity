@@ -50,7 +50,6 @@ jobs:
           cp -R site/assets/iconopacity/. pages/assets/iconopacity/
           cp site/depictions/*.json pages/depictions/
           [ -f pages/index.html ] || cp site/index.html pages/index.html
-          [ -f pages/CydiaIcon.png ] || cp site/CydiaIcon.png pages/CydiaIcon.png
           python3 make_repo.py packages pages
           cd pages
           git config user.name "github-actions"
