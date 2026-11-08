@@ -1,4 +1,5 @@
 .theos/
 packages/
 obj/
+pages/
 .DS_Store

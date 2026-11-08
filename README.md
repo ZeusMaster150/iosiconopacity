@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/icon.png" width="128" alt="Icon Opacity icon">
+  <img src="site/assets/iconopacity/icon.png" width="128" alt="Icon Opacity icon">
 </p>
 
 <h1 align="center">Icon Opacity</h1>
@@ -16,13 +16,13 @@
 </p>
 
 <p align="center">
-  <a href="https://zeusmaster150.github.io/iosiconopacity/"><b>Repo page</b></a> ·
-  <a href="sileo://source/https://zeusmaster150.github.io/iosiconopacity/"><b>Add to Sileo</b></a> ·
+  <a href="https://zeusmaster150.github.io/"><b>Repo page</b></a> ·
+  <a href="sileo://source/https://zeusmaster150.github.io/"><b>Add to Sileo</b></a> ·
   <a href="https://github.com/ZeusMaster150/iosiconopacity/actions">Builds</a>
 </p>
 
 <p align="center">
-  <img src="docs/assets/preview.png" alt="Illustration of the effect">
+  <img src="site/assets/iconopacity/preview.png" alt="Illustration of the effect">
   <br><sub>Illustration of the effect, not a device screenshot.</sub>
 </p>
 
@@ -40,14 +40,14 @@
 ### From the repo (Sileo, Zebra, Cydia)
 
 1. Open Sileo and go to **Sources → +**.
-2. Add the source: `https://zeusmaster150.github.io/iosiconopacity/`
+2. Add the source: `https://zeusmaster150.github.io/`
 3. Find **Icon Opacity** and install it.
 
 Requires **PreferenceLoader** and **MobileSubstrate** (usually installed with the jailbreak).
 
 ### From a .deb
 
-Download the latest `.deb` from `docs/debs/` and open it in Filza, then respring.
+Download the latest `.deb` from the [Actions artifacts](https://github.com/ZeusMaster150/iosiconopacity/actions) and open it in Filza, then respring.
 
 ## Usage
 
@@ -71,7 +71,7 @@ Known limitations:
 
 ## Build
 
-The project uses [Theos](https://theos.dev). A GitHub Actions workflow (`.github/workflows/build.yml`) builds the tweak and updates the repo in `docs/` (published with GitHub Pages).
+The project uses [Theos](https://theos.dev). A GitHub Actions workflow (`.github/workflows/build.yml`) builds the tweak and publishes it to the Sileo repo [`ZeusMaster150.github.io`](https://github.com/ZeusMaster150/ZeusMaster150.github.io) (served by GitHub Pages).
 
 To build locally with Theos installed:
 
@@ -88,7 +88,7 @@ make package
 - Предпросмотр на иконке Safari прямо в настройках.
 - Всё применяется сразу, без ресинга.
 
-**Установка:** Sileo → Источники → «+» → `https://zeusmaster150.github.io/iosiconopacity/` → найти Icon Opacity. Нужен PreferenceLoader.
+**Установка:** Sileo → Источники → «+» → `https://zeusmaster150.github.io/` → найти Icon Opacity. Нужен PreferenceLoader.
 
 Настройки лежат в **Настройки → Icon Opacity**.
 

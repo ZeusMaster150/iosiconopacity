@@ -100,8 +100,8 @@ def main():
 
     # 4. Release
     release = (
-        "Origin: IconOpacity repo\n"
-        "Label: IconOpacity repo\n"
+        "Origin: ZeusMaster150\n"
+        "Label: ZeusMaster150\n"
         "Suite: stable\n"
         "Version: 1.0\n"
         "Codename: ios\n"
@@ -116,8 +116,8 @@ def main():
     index_path = os.path.join(repo_dir, "index.html")
     if not os.path.exists(index_path):
         with open(index_path, "w", encoding="utf-8") as f:
-            f.write("<!doctype html><meta charset='utf-8'><title>IconOpacity repo</title>"
-                    "<h1>IconOpacity repo</h1><p>Добавь эту ссылку в Sileo как репозиторий.</p>")
+            f.write("<!doctype html><meta charset='utf-8'><title>ZeusMaster150 repo</title>"
+                    "<h1>ZeusMaster150 repo</h1><p>Добавь эту ссылку в Sileo как репозиторий.</p>")
 
     print("Готово: пакетов в репозитории:", len(entries))
 

@@ -7,7 +7,6 @@ Description: Translucent icons and labels plus a colour overlay, with live previ
 Maintainer: ZeusMaster150
 Author: ZeusMaster150
 Section: Tweaks
-Homepage: https://zeusmaster150.github.io/iosiconopacity/
-Depiction: https://zeusmaster150.github.io/iosiconopacity/
-SileoDepiction: https://zeusmaster150.github.io/iosiconopacity/depictions/com.example.iconopacity.json
-Icon: https://zeusmaster150.github.io/iosiconopacity/assets/icon.png
+Homepage: https://github.com/ZeusMaster150/iosiconopacity
+SileoDepiction: https://zeusmaster150.github.io/depictions/com.example.iconopacity.json
+Icon: https://zeusmaster150.github.io/assets/iconopacity/icon.png
